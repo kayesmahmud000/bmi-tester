@@ -4,9 +4,9 @@ import 'package:bmi_test_app/main.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen  extends StatefulWidget{
-  TextTheme textTheme;
+  
 
-SplashScreen({required this.textTheme});
+SplashScreen();
 
 @override
 State<SplashScreen> createState ()=> _SplashScreenState();
@@ -30,7 +30,7 @@ class _SplashScreenState  extends State<SplashScreen>{
           mainAxisAlignment: .center,
           children: [
             Icon(Icons.rocket_launch , color: Colors.red.shade400, size: 30,),
-            Text('BMI TESTER', style: Theme.of(context).textTheme.headlineLarge,),
+            Text('BMI TESTER', style: Theme.of(context).textTheme.headlineMedium,),
           ],
         ),
       ),

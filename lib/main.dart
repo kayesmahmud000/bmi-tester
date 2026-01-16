@@ -1,5 +1,7 @@
 import 'package:bmi_test_app/splash_screen.dart';
+import 'package:bmi_test_app/three_d_list.dart';
 import 'package:bmi_test_app/widgets/bmi_test_field.dart';
+import 'package:bmi_test_app/widgets/custom_btn.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -20,7 +22,7 @@ class MyApp extends StatelessWidget {
         textTheme: TextTheme(headlineLarge: TextStyle(fontSize: 30, fontWeight: .bold, color: Colors.red.shade400 ,fontStyle: .italic , fontFamily:'MainFont'))
       ),
       // home: const MyHomePage(title: 'BMI TEST '),
-      home:  SplashScreen(textTheme: Theme.of(context).textTheme,),
+      home:  SplashScreen(),
     );
   }
 }
@@ -59,8 +61,14 @@ class _MyHomePageState extends State<MyHomePage> {
           width: double.infinity,
           height: double.infinity,
           color:bgColor,
-          child:Center(
-            child: BmiTestField(onBgChange: bgChange),
+          child:Column(
+            mainAxisAlignment: .center,
+            children: [
+              Center(
+                child: BmiTestField(onBgChange: bgChange),
+              ),
+              CustomBtn(btnName: 'Next Page', callback: () => Navigator.push(context, MaterialPageRoute(builder: (context)=>ThreeDList())),)
+            ],
           )
       ) 
       )  

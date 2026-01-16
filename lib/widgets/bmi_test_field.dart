@@ -18,6 +18,14 @@ class _BmiTestFieldState extends State<BmiTestField>{
 
   String result ='';
 
+  @override
+  void dispose() {
+    wtController.dispose();
+    inController.dispose();
+    ftController.dispose();
+    super.dispose();
+  }
+
 
 void calculateBIM(){
   var wt= wtController.text.toString();
