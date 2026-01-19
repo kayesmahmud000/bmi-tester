@@ -78,6 +78,7 @@ setState(() {
         mainAxisAlignment: .center,
         children: [
           TextField(
+            keyboardType: TextInputType.numberWithOptions(),
             controller:wtController ,
             decoration: InputDecoration(
               label: Text('Enter Your Weight'),
@@ -89,6 +90,7 @@ setState(() {
           SizedBox(height: 11,),
 
           TextField(
+            keyboardType: TextInputType.numberWithOptions(),
             controller: ftController,
             decoration: InputDecoration(
               label: Text('Enter Your Height in Fit'),
@@ -99,6 +101,7 @@ setState(() {
           ),
           SizedBox(height: 11,),
           TextField(
+            keyboardType: TextInputType.numberWithOptions(),
             controller: inController,
             decoration: InputDecoration(
               label: Text('Enter Your Height in Inch'),

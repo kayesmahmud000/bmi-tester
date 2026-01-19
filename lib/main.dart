@@ -1,8 +1,11 @@
+import 'package:bmi_test_app/constent/kay.dart';
+import 'package:bmi_test_app/login_page.dart';
 import 'package:bmi_test_app/splash_screen.dart';
 import 'package:bmi_test_app/three_d_list.dart';
 import 'package:bmi_test_app/widgets/bmi_test_field.dart';
 import 'package:bmi_test_app/widgets/custom_btn.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
   runApp(const MyApp());
@@ -46,6 +49,16 @@ class _MyHomePageState extends State<MyHomePage> {
   });
   
  }
+
+ void logout() async{
+  var sharedPref = await SharedPreferences.getInstance();
+
+ sharedPref.setBool(StorageKey.keyLogin, false);
+
+ Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>LoginPage()));
+
+ 
+ }
   @override
   Widget build(BuildContext context) {
    
@@ -54,7 +67,14 @@ class _MyHomePageState extends State<MyHomePage> {
        
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
        
-        title: Center(child: Text(widget.title, style: Theme.of(context).textTheme.headlineLarge,)),
+        title: Container(child: Row(
+          mainAxisAlignment: .spaceBetween,
+
+          children: [
+            Text(widget.title, style: Theme.of(context).textTheme.headlineLarge,),
+           IconButton(onPressed: logout, icon: Icon(Icons.logout))
+          ],
+        )),
       ),
       body: Center(
         child: Container(
