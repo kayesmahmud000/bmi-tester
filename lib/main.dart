@@ -1,5 +1,6 @@
 import 'package:bmi_test_app/constent/kay.dart';
 import 'package:bmi_test_app/login_page.dart';
+import 'package:bmi_test_app/notes.dart';
 import 'package:bmi_test_app/splash_screen.dart';
 import 'package:bmi_test_app/three_d_list.dart';
 import 'package:bmi_test_app/widgets/bmi_test_field.dart';
@@ -87,7 +88,7 @@ class _MyHomePageState extends State<MyHomePage> {
               Center(
                 child: BmiTestField(onBgChange: bgChange),
               ),
-              CustomBtn(btnName: 'Next Page', callback: () => Navigator.push(context, MaterialPageRoute(builder: (context)=>ThreeDList())),)
+              CustomBtn(btnName: 'Next Page', callback: () => Navigator.push(context, MaterialPageRoute(builder: (context)=>Notes())),)
             ],
           )
       ) 
